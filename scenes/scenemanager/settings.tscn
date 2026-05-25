@@ -162,6 +162,15 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
+[node name="displaysettingstext" type="RichTextLabel" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/gamesettings" unique_id=404562020]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_d1qlu")
+text = "Game Settings"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="videosettings" type="VBoxContainer" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer" unique_id=1414513504]
 visible = false
 layout_mode = 2

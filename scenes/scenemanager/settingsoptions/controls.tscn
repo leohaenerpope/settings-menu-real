@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://d3ckdxr2y7nfm"]
+
+[ext_resource type="Script" uid="uid://btygb6g1tle4o" path="res://scenes/scenemanager/settingsoptions/controls.gd" id="1_tlrys"]
+
+[sub_resource type="Theme" id="Theme_syijf"]
+default_font_size = 35
+
+[sub_resource type="Theme" id="Theme_iwcvy"]
+default_font_size = 35
+
+[node name="bind" type="HBoxContainer" unique_id=952850954]
+custom_minimum_size = Vector2(0, 60)
+script = ExtResource("1_tlrys")
+
+[node name="label" type="RichTextLabel" parent="." unique_id=1269482379]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = SubResource("Theme_syijf")
+text = "Move Left"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="key" type="RichTextLabel" parent="." unique_id=1023334741]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.32
+mouse_filter = 1
+theme = SubResource("Theme_iwcvy")
+text = "None"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="configure" type="Button" parent="." unique_id=1160270935]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.44
+mouse_filter = 1
+theme = SubResource("Theme_iwcvy")
+text = "Configure"
+
+[node name="reset" type="Button" parent="." unique_id=97881318]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.44
+mouse_filter = 1
+theme = SubResource("Theme_iwcvy")
+text = "Reset"
+
+[connection signal="button_down" from="configure" to="." method="_on_configure_button_down"]
+[connection signal="button_down" from="reset" to="." method="_on_reset_button_down"]

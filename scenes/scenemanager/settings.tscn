@@ -1,0 +1,334 @@
+[gd_scene format=3 uid="uid://ege8ihl7ylgm"]
+
+[ext_resource type="Script" uid="uid://cb34vo2nl71mo" path="res://scenes/scenemanager/settingsmanager.gd" id="1_d1qlu"]
+[ext_resource type="PackedScene" uid="uid://blp3vx55mnjer" path="res://scenes/scenemanager/settingsoptions/onoff.tscn" id="4_cwkb5"]
+[ext_resource type="PackedScene" uid="uid://5uxqbj8ep2wr" path="res://scenes/scenemanager/settingsoptions/dropdown.tscn" id="5_slaji"]
+[ext_resource type="PackedScene" uid="uid://d3ckdxr2y7nfm" path="res://scenes/scenemanager/settingsoptions/controls.tscn" id="6_807un"]
+[ext_resource type="Script" uid="uid://c58afvsuu1530" path="res://scenes/scenemanager/settingsoptions/dropdowndata.gd" id="6_wn8p6"]
+[ext_resource type="PackedScene" uid="uid://olv8qq7flv8i" path="res://scenes/scenemanager/settingsoptions/buttonpress.tscn" id="7_0ua2x"]
+[ext_resource type="PackedScene" uid="uid://bu2thsxk4gnck" path="res://scenes/scenemanager/settingsoptions/slider.tscn" id="8_83b00"]
+
+[sub_resource type="Theme" id="Theme_wmyf0"]
+default_font_size = 40
+
+[sub_resource type="Theme" id="Theme_l7o14"]
+default_font_size = 17
+
+[sub_resource type="Theme" id="Theme_d1qlu"]
+default_font_size = 22
+
+[sub_resource type="Resource" id="Resource_trbsh"]
+script = ExtResource("6_wn8p6")
+id = "0"
+name = "Display 1: 1920x1080 144Hz"
+metadata/_custom_type_script = "uid://c58afvsuu1530"
+
+[sub_resource type="Resource" id="Resource_en316"]
+script = ExtResource("6_wn8p6")
+id = "1920x1080"
+name = "16:9"
+metadata/_custom_type_script = "uid://c58afvsuu1530"
+
+[sub_resource type="Resource" id="Resource_uwjia"]
+script = ExtResource("6_wn8p6")
+id = "1920x1200"
+name = "16:10"
+metadata/_custom_type_script = "uid://c58afvsuu1530"
+
+[sub_resource type="Resource" id="Resource_5wlqm"]
+script = ExtResource("6_wn8p6")
+id = "2560x1080"
+name = "21:9"
+metadata/_custom_type_script = "uid://c58afvsuu1530"
+
+[sub_resource type="Resource" id="Resource_6kape"]
+script = ExtResource("6_wn8p6")
+id = "3840x1080"
+name = "32:9"
+metadata/_custom_type_script = "uid://c58afvsuu1530"
+
+[sub_resource type="Resource" id="Resource_slmiy"]
+script = ExtResource("6_wn8p6")
+id = "1920x1440"
+name = "4:3"
+metadata/_custom_type_script = "uid://c58afvsuu1530"
+
+[sub_resource type="Resource" id="Resource_u0uui"]
+script = ExtResource("6_wn8p6")
+id = "2160x1440"
+name = "3:2"
+metadata/_custom_type_script = "uid://c58afvsuu1530"
+
+[sub_resource type="Resource" id="Resource_aqcwo"]
+script = ExtResource("6_wn8p6")
+id = "1920x1920"
+name = "1:1"
+metadata/_custom_type_script = "uid://c58afvsuu1530"
+
+[node name="settings" type="CanvasLayer" unique_id=951338002 node_paths=PackedStringArray("gameSettings", "videoSettings", "audioSettings", "controlsSettings", "control", "settingDescriptionHint", "monitorSetting")]
+script = ExtResource("1_d1qlu")
+gameSettings = NodePath("Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/gamesettings")
+videoSettings = NodePath("Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/videosettings")
+audioSettings = NodePath("Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/audiosettings")
+controlsSettings = NodePath("Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/controlssettings")
+control = NodePath("Control")
+settingDescriptionHint = NodePath("Control/settingscontrol/settingsmainvbox/settingdescriptiontext")
+monitorSetting = NodePath("Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/videosettings/displaymonitor")
+
+[node name="Control" type="Control" parent="." unique_id=1685761834]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="settingscontrol" type="Control" parent="Control" unique_id=267778381]
+anchors_preset = 0
+anchor_left = 0.29166666
+anchor_top = 0.14027777
+anchor_right = 0.99583334
+anchor_bottom = 0.8837963
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="settingsmainvbox" type="VBoxContainer" parent="Control/settingscontrol" unique_id=107501085]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="settingsbuttons" type="HBoxContainer" parent="Control/settingscontrol/settingsmainvbox" unique_id=247423765]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="gamebutton" type="Button" parent="Control/settingscontrol/settingsmainvbox/settingsbuttons" unique_id=1860508209]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_wmyf0")
+text = "Game"
+
+[node name="videobutton" type="Button" parent="Control/settingscontrol/settingsmainvbox/settingsbuttons" unique_id=1498797351]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_wmyf0")
+text = "Video"
+
+[node name="audiobutton" type="Button" parent="Control/settingscontrol/settingsmainvbox/settingsbuttons" unique_id=1797372643]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_wmyf0")
+text = "Audio"
+
+[node name="controlsbutton" type="Button" parent="Control/settingscontrol/settingsmainvbox/settingsbuttons" unique_id=1905563034]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_wmyf0")
+text = "Controls"
+
+[node name="settingdescriptiontext" type="RichTextLabel" parent="Control/settingscontrol/settingsmainvbox" unique_id=1445279458]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.08
+mouse_filter = 1
+theme = SubResource("Theme_l7o14")
+text = "VSync: This setting does something like this where you are like this and then you do something here and then the setting affects the thing in this way."
+vertical_alignment = 1
+
+[node name="scrollcontainer" type="ScrollContainer" parent="Control/settingscontrol/settingsmainvbox" unique_id=126661091]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer" unique_id=589201551]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="gamesettings" type="VBoxContainer" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer" unique_id=267501821]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="videosettings" type="VBoxContainer" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer" unique_id=1414513504]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="displaysettingstext" type="RichTextLabel" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/videosettings" unique_id=724717194]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_d1qlu")
+text = "Display Settings"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="onoff" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/videosettings" unique_id=1489296280 instance=ExtResource("4_cwkb5")]
+layout_mode = 2
+group = "video"
+
+[node name="displaymonitor" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/videosettings" unique_id=2031872102 instance=ExtResource("5_slaji")]
+layout_mode = 2
+values = Array[ExtResource("6_wn8p6")]([SubResource("Resource_trbsh")])
+id = "currentmonitor"
+group = "video"
+settingName = "Display Monitor"
+settingDescription = "Monitor options for displaying the game. NOTE: Display resolution information may be affected by system display scale settings."
+
+[node name="dropdown" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/videosettings" unique_id=738980063 instance=ExtResource("5_slaji")]
+layout_mode = 2
+group = "video"
+
+[node name="aspectratio" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/videosettings" unique_id=1659699987 instance=ExtResource("5_slaji")]
+layout_mode = 2
+values = Array[ExtResource("6_wn8p6")]([SubResource("Resource_en316"), SubResource("Resource_uwjia"), SubResource("Resource_5wlqm"), SubResource("Resource_6kape"), SubResource("Resource_slmiy"), SubResource("Resource_u0uui"), SubResource("Resource_aqcwo")])
+id = "aspectratio"
+group = "video"
+settingName = "Aspect Ratio"
+
+[node name="stretch" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/videosettings" unique_id=663108446 instance=ExtResource("4_cwkb5")]
+layout_mode = 2
+value = true
+id = "windowstretch"
+group = "video"
+onButtonText = "Letterbox"
+offButtonText = "Fill"
+settingName = "Stretch Mode"
+
+[node name="setvideosettings" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/videosettings" unique_id=11348683 node_paths=PackedStringArray("specificNode") instance=ExtResource("7_0ua2x")]
+layout_mode = 2
+functionName = "applyGroup"
+specificNode = NodePath("../../../../../../..")
+args = ["video"]
+buttonText = "Apply Display Settings"
+
+[node name="graphicsettingtext" type="RichTextLabel" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/videosettings" unique_id=216631793]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_d1qlu")
+text = "Graphics Settings"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="3dres" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/videosettings" unique_id=1403934403 instance=ExtResource("8_83b00")]
+layout_mode = 2
+sliderMin = 25.0
+settingDescription = "Offers higher performance when lowered, however 3D environments will appear more blurry and pixelated. NOTE: Some scenes may have custom 3D resolutions which will change the effect of this setting."
+
+[node name="buttonpress" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/videosettings" unique_id=717221511 node_paths=PackedStringArray("specificNode") instance=ExtResource("7_0ua2x")]
+layout_mode = 2
+functionName = "resetSettings"
+specificNode = NodePath("../../../../../../..")
+args = ["video"]
+buttonText = "Reset Video Settings To Default"
+
+[node name="audiosettings" type="VBoxContainer" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer" unique_id=2053343708]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="audiosettingtext" type="RichTextLabel" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/audiosettings" unique_id=38520269]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_d1qlu")
+text = "Audio Settings"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="mastervol" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/audiosettings" unique_id=682821827 instance=ExtResource("8_83b00")]
+layout_mode = 2
+id = "mastervol"
+type = "audio"
+settingName = "Master Volume"
+settingDescription = "Changes the volume of all in-game sounds."
+
+[node name="musicvol" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/audiosettings" unique_id=2010571831 instance=ExtResource("8_83b00")]
+layout_mode = 2
+id = "musicvol"
+type = "audio"
+settingName = "Music Volume"
+settingDescription = "Changes music volume."
+
+[node name="sfxvol" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/audiosettings" unique_id=180911033 instance=ExtResource("8_83b00")]
+layout_mode = 2
+id = "sfxvol"
+type = "audio"
+settingName = "SFX Volume"
+settingDescription = "Changes sound effect volume."
+
+[node name="tinnitus" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/audiosettings" unique_id=1432886049 instance=ExtResource("4_cwkb5")]
+layout_mode = 2
+id = "tinnitus"
+type = "audio"
+settingName = "Tinnitus Filter"
+settingDescription = "Filters out higher frequencies in sounds."
+
+[node name="buttonpress2" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/audiosettings" unique_id=1915954816 node_paths=PackedStringArray("specificNode") instance=ExtResource("7_0ua2x")]
+layout_mode = 2
+functionName = "resetSettings"
+specificNode = NodePath("../../../../../../..")
+args = ["audio"]
+buttonText = "Reset Audio Settings To Default"
+
+[node name="controlssettings" type="VBoxContainer" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer" unique_id=696919702]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="audiosettingtext" type="RichTextLabel" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/controlssettings" unique_id=1154810214]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_d1qlu")
+text = "Controls Settings"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="forward" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/controlssettings" unique_id=952850954 instance=ExtResource("6_807un")]
+layout_mode = 2
+id = "up"
+settingName = "Move Forward"
+
+[node name="left" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/controlssettings" unique_id=1184278122 instance=ExtResource("6_807un")]
+layout_mode = 2
+id = "left"
+settingName = "Move Left"
+
+[node name="back" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/controlssettings" unique_id=1208604866 instance=ExtResource("6_807un")]
+layout_mode = 2
+id = "down"
+settingName = "Move Backward"
+
+[node name="right" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/controlssettings" unique_id=462896961 instance=ExtResource("6_807un")]
+layout_mode = 2
+id = "right"
+settingName = "Move Right"
+
+[node name="buttonpress2" parent="Control/settingscontrol/settingsmainvbox/scrollcontainer/VBoxContainer/controlssettings" unique_id=1858687146 node_paths=PackedStringArray("specificNode") instance=ExtResource("7_0ua2x")]
+layout_mode = 2
+functionName = "resetSettings"
+specificNode = NodePath("../../../../../../..")
+args = ["controls"]
+buttonText = "Reset All 	Controls To Default"
+
+[connection signal="button_down" from="Control/settingscontrol/settingsmainvbox/settingsbuttons/gamebutton" to="." method="_on_gamebutton_button_down"]
+[connection signal="button_down" from="Control/settingscontrol/settingsmainvbox/settingsbuttons/videobutton" to="." method="_on_videobutton_button_down"]
+[connection signal="button_down" from="Control/settingscontrol/settingsmainvbox/settingsbuttons/audiobutton" to="." method="_on_audiobutton_button_down"]
+[connection signal="button_down" from="Control/settingscontrol/settingsmainvbox/settingsbuttons/controlsbutton" to="." method="_on_controlsbutton_button_down"]

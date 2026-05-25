@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cqxlmsdiqbne0"]
+
+[sub_resource type="Gradient" id="Gradient_ryn5g"]
+colors = PackedColorArray(0, 0, 0, 1, 0.32096982, 6.9284215e-05, 0.32096735, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pkvvb"]
+gradient = SubResource("Gradient_ryn5g")
+width = 1920
+height = 1080
+fill_from = Vector2(0.359375, 0.86728394)
+
+[node name="Control" type="Control" unique_id=462225886]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="TextureRect" parent="." unique_id=72880308]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_pkvvb")

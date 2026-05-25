@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://blp3vx55mnjer"]
+
+[ext_resource type="Script" uid="uid://cf4u64wdleam5" path="res://scenes/scenemanager/settingsoptions/onoff.gd" id="1_ttp1g"]
+
+[sub_resource type="Theme" id="Theme_syijf"]
+default_font_size = 35
+
+[sub_resource type="Theme" id="Theme_iwcvy"]
+default_font_size = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_syijf"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.48805398, 0.48805404, 0.48805392, 0.5137255)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="onoff" type="HBoxContainer" unique_id=1489296280]
+custom_minimum_size = Vector2(0, 60)
+script = ExtResource("1_ttp1g")
+id = "vsync"
+type = "video"
+settingName = "VSync"
+
+[node name="label" type="RichTextLabel" parent="." unique_id=1626116933]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme = SubResource("Theme_syijf")
+text = "VSync"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="on" type="Button" parent="." unique_id=772802188]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.33
+mouse_filter = 1
+theme = SubResource("Theme_iwcvy")
+theme_override_colors/font_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_styles/disabled = SubResource("StyleBoxFlat_syijf")
+text = "On"
+
+[node name="off" type="Button" parent="." unique_id=900016199]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.33
+mouse_filter = 1
+theme = SubResource("Theme_iwcvy")
+theme_override_colors/font_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_styles/disabled = SubResource("StyleBoxFlat_syijf")
+disabled = true
+text = "Off"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

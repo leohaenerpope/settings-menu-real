@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://5uxqbj8ep2wr"]
+
+[ext_resource type="Script" uid="uid://cut3740iherop" path="res://scenes/scenemanager/settingsoptions/dropdown.gd" id="1_muhbd"]
+[ext_resource type="Script" uid="uid://c58afvsuu1530" path="res://scenes/scenemanager/settingsoptions/dropdowndata.gd" id="2_o4fu1"]
+
+[sub_resource type="Resource" id="Resource_trbsh"]
+script = ExtResource("2_o4fu1")
+id = "fullscreen"
+name = "Fullscreen"
+
+[sub_resource type="Resource" id="Resource_en316"]
+script = ExtResource("2_o4fu1")
+id = "borderless"
+name = "Borderless Fullscreen"
+metadata/_custom_type_script = "uid://c58afvsuu1530"
+
+[sub_resource type="Resource" id="Resource_5wlqm"]
+script = ExtResource("2_o4fu1")
+id = "windowed"
+name = "Windowed"
+metadata/_custom_type_script = "uid://c58afvsuu1530"
+
+[sub_resource type="Theme" id="Theme_syijf"]
+default_font_size = 35
+
+[sub_resource type="Theme" id="Theme_en316"]
+default_font_size = 35
+
+[node name="dropdown" type="HBoxContainer" unique_id=2031872102]
+custom_minimum_size = Vector2(0, 60)
+script = ExtResource("1_muhbd")
+values = Array[ExtResource("2_o4fu1")]([SubResource("Resource_trbsh"), SubResource("Resource_en316"), SubResource("Resource_5wlqm")])
+id = "windowmode"
+type = "video"
+settingName = "Display Mode"
+
+[node name="label" type="RichTextLabel" parent="." unique_id=1374143644]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = SubResource("Theme_syijf")
+text = "Display Mode"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="dropdownbutton" type="OptionButton" parent="." unique_id=299611624]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.66
+mouse_filter = 1
+theme = SubResource("Theme_en316")
+selected = 0
+item_count = 3
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Windowed"
+popup/item_2/id = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

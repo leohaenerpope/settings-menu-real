@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bu2thsxk4gnck"]
+
+[ext_resource type="Script" uid="uid://cc4qhxbvgseos" path="res://scenes/scenemanager/settingsoptions/slider.gd" id="1_soc6l"]
+
+[sub_resource type="Theme" id="Theme_syijf"]
+default_font_size = 35
+
+[sub_resource type="Theme" id="Theme_trbsh"]
+default_font_size = 20
+
+[sub_resource type="Theme" id="Theme_en316"]
+default_font_size = 35
+
+[node name="slider" type="HBoxContainer" unique_id=1403934403]
+custom_minimum_size = Vector2(0, 60)
+script = ExtResource("1_soc6l")
+percent = true
+id = "3dresolution"
+type = "video"
+settingName = "3D Resolution"
+
+[node name="label" type="RichTextLabel" parent="." unique_id=1227256417]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme = SubResource("Theme_syijf")
+text = "3D Resolution"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="slidercontainer" type="VBoxContainer" parent="." unique_id=105595391]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.33
+
+[node name="slidertext" type="RichTextLabel" parent="slidercontainer" unique_id=552726894]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme = SubResource("Theme_trbsh")
+text = "100.0%"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="hslider" type="HSlider" parent="slidercontainer" unique_id=1663707490]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = SubResource("Theme_en316")
+value = 100.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

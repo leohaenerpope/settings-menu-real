@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://olv8qq7flv8i"]
+
+[ext_resource type="Script" uid="uid://bqwr6bnpptqeu" path="res://scenes/scenemanager/settingsoptions/buttonpress.gd" id="1_51say"]
+
+[sub_resource type="Theme" id="Theme_iwcvy"]
+default_font_size = 35
+
+[node name="buttonpress" type="HBoxContainer" unique_id=11348683]
+custom_minimum_size = Vector2(0, 60)
+script = ExtResource("1_51say")
+buttonText = "Reset Video Settings"
+
+[node name="space" type="Control" parent="." unique_id=657670620]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+mouse_filter = 1
+
+[node name="button" type="Button" parent="." unique_id=1644645378]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.33
+mouse_filter = 1
+theme = SubResource("Theme_iwcvy")
+text = "Reset Video Settings"
+
+[node name="space2" type="Control" parent="." unique_id=897453199]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+mouse_filter = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
